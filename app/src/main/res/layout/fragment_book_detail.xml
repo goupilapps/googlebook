@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="book"
+            type="ch.jmbise.googlebook.network.model.Books.Book" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:background="@android:color/white"
+        tools:context="ch.jmbise.googlebook.ui.BookDetailFragment">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            tools:text="Title"
+            android:text="@{book.volumeInfo.title}" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:image_url="@{book.volumeInfo.imageLinks.thumbnail}"
+            android:layout_marginTop="17dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="publisher"
+            android:text="@{book.volumeInfo.publisher}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="published date"
+            android:text="@{book.volumeInfo.publishedDate}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="authors"
+            android:text="@{book.volumeInfo.authors}" />
+
+
+    </LinearLayout>
+</layout>
